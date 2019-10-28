@@ -1,0 +1,225 @@
+EESchema Schematic File Version 4
+LIBS:WBS-cache
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 5
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Sheet
+S 1200 5650 1350 1200
+U 5DAF9C54
+F0 "Power" 50
+F1 "power.sch" 50
+F2 "Vbat" I L 1200 5950 50 
+F3 "5V" O R 2550 6000 50 
+F4 "2.5V" O R 2550 6300 50 
+F5 "3.3V" O R 2550 6600 50 
+$EndSheet
+$Sheet
+S 2250 3000 1200 1150
+U 5DB141F9
+F0 "Oscillator" 50
+F1 "Oscillator.sch" 50
+F2 "5V" I L 2250 3150 50 
+F3 "RF_OUT" O R 3450 3550 50 
+$EndSheet
+$Sheet
+S 5850 2950 1050 1200
+U 5DAFCE8E
+F0 "Bandpass" 50
+F1 "bandpass.sch" 50
+F2 "IN" I L 5850 3550 50 
+F3 "OUT" O R 6900 3550 50 
+F4 "5V" I L 5850 3150 50 
+F5 "2.5V" I L 5850 3300 50 
+$EndSheet
+$Sheet
+S 7950 2950 1100 1200
+U 5DAFDC72
+F0 "ADC" 50
+F1 "adc.sch" 50
+F2 "5V" I L 7950 3150 50 
+F3 "OUT" O R 9050 3550 50 
+F4 "IN" I L 7950 3550 50 
+F5 "3.3V" I L 7950 3300 50 
+$EndSheet
+$Comp
+L Device:D D1
+U 1 1 5DB22E98
+P 4050 3550
+F 0 "D1" H 4050 3334 50  0000 C CNN
+F 1 "1N914" H 4050 3425 50  0000 C CNN
+F 2 "Diode_SMD:D_SOD-323F" H 4050 3550 50  0001 C CNN
+F 3 "~" H 4050 3550 50  0001 C CNN
+F 4 "512-1N914BWS" H 4050 3550 50  0001 C CNN "Mouser"
+	1    4050 3550
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:C C1
+U 1 1 5DB232FF
+P 4500 3750
+F 0 "C1" H 4615 3796 50  0000 L CNN
+F 1 "1u" H 4615 3705 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 4538 3600 50  0001 C CNN
+F 3 "~" H 4500 3750 50  0001 C CNN
+F 4 "81-GCG21BR71A106KE1K" H 4500 3750 50  0001 C CNN "Mouser"
+	1    4500 3750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 5DB2381B
+P 4900 3750
+F 0 "R1" H 4970 3796 50  0000 L CNN
+F 1 "1k" H 4970 3705 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 4830 3750 50  0001 C CNN
+F 3 "~" H 4900 3750 50  0001 C CNN
+F 4 "71-CRCW08051K00FKEAC" H 4900 3750 50  0001 C CNN "Mouser"
+	1    4900 3750
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR02
+U 1 1 5DB23D1E
+P 4500 3900
+F 0 "#PWR02" H 4500 3650 50  0001 C CNN
+F 1 "GND" H 4505 3727 50  0000 C CNN
+F 2 "" H 4500 3900 50  0001 C CNN
+F 3 "" H 4500 3900 50  0001 C CNN
+	1    4500 3900
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR03
+U 1 1 5DB240EB
+P 4900 3900
+F 0 "#PWR03" H 4900 3650 50  0001 C CNN
+F 1 "GND" H 4905 3727 50  0000 C CNN
+F 2 "" H 4900 3900 50  0001 C CNN
+F 3 "" H 4900 3900 50  0001 C CNN
+	1    4900 3900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4200 3550 4500 3550
+Wire Wire Line
+	4500 3550 4500 3600
+Wire Wire Line
+	4500 3550 4900 3550
+Wire Wire Line
+	4900 3550 4900 3600
+Connection ~ 4500 3550
+Wire Wire Line
+	3900 3550 3800 3550
+Wire Wire Line
+	5850 3550 4900 3550
+Connection ~ 4900 3550
+Wire Wire Line
+	7950 3550 6900 3550
+Text Label 1950 3150 0    50   ~ 0
+5V
+Text Label 5700 3150 0    50   ~ 0
+5V
+Text Label 7800 3150 0    50   ~ 0
+5V
+Text Label 2700 6000 0    50   ~ 0
+5V
+Wire Wire Line
+	2550 6000 2700 6000
+Wire Wire Line
+	1950 3150 2250 3150
+Wire Wire Line
+	5700 3150 5850 3150
+Wire Wire Line
+	7800 3150 7950 3150
+Text Label 2700 6300 0    50   ~ 0
+2.5V
+Text Label 2700 6600 0    50   ~ 0
+3.3V
+Wire Wire Line
+	2550 6300 2700 6300
+Wire Wire Line
+	2550 6600 2700 6600
+Text Label 5650 3300 0    50   ~ 0
+2.5V
+Wire Wire Line
+	5850 3300 5650 3300
+Text Label 7750 3300 0    50   ~ 0
+3.3V
+Wire Wire Line
+	7950 3300 7750 3300
+$Comp
+L Connector:Conn_Coaxial J1
+U 1 1 5DB5BD6A
+P 4000 2550
+F 0 "J1" H 4100 2525 50  0000 L CNN
+F 1 "Conn_Coaxial" H 4100 2434 50  0000 L CNN
+F 2 "WBS:CONSMA003.062" H 4000 2550 50  0001 C CNN
+F 3 " ~" H 4000 2550 50  0001 C CNN
+F 4 "712-CONSMA003.062-G" H 4000 2550 50  0001 C CNN "Mouser"
+	1    4000 2550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3800 2550 3800 3550
+Connection ~ 3800 3550
+Wire Wire Line
+	3800 3550 3450 3550
+$Comp
+L power:GND #PWR01
+U 1 1 5DB5C53F
+P 4000 2750
+F 0 "#PWR01" H 4000 2500 50  0001 C CNN
+F 1 "GND" H 4005 2577 50  0000 C CNN
+F 2 "" H 4000 2750 50  0001 C CNN
+F 3 "" H 4000 2750 50  0001 C CNN
+	1    4000 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x03_Male J2
+U 1 1 5DB5CE1E
+P 10100 3650
+F 0 "J2" H 10072 3582 50  0000 R CNN
+F 1 "Conn_01x03_Male" H 10072 3673 50  0000 R CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 10100 3650 50  0001 C CNN
+F 3 "~" H 10100 3650 50  0001 C CNN
+	1    10100 3650
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	9050 3550 9900 3550
+Text Label 950  5950 0    50   ~ 0
+VBAT
+Wire Wire Line
+	950  5950 1200 5950
+Text Label 9700 3650 0    50   ~ 0
+VBAT
+$Comp
+L power:GND #PWR04
+U 1 1 5DB5F994
+P 9700 3800
+F 0 "#PWR04" H 9700 3550 50  0001 C CNN
+F 1 "GND" H 9705 3627 50  0000 C CNN
+F 2 "" H 9700 3800 50  0001 C CNN
+F 3 "" H 9700 3800 50  0001 C CNN
+	1    9700 3800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9900 3650 9700 3650
+Wire Wire Line
+	9700 3800 9700 3750
+Wire Wire Line
+	9700 3750 9900 3750
+$EndSCHEMATC
